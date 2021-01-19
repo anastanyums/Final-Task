@@ -3,13 +3,13 @@
 @section('content')
 
 <div class="panel panel-default">
-  <div class="panel-heading">Author List</div>
+  <div class="panel-heading">Technician List</div>
   <div class="panel-body">
     <table class="table table-hover table-bordered">
       <thead>
         <tr>
-          <th scope="col">Author ID</th>
-          <th scope="col">Author Name</th>
+          <th scope="col">Technician ID</th>
+          <th scope="col">Technician Name</th>
           
 
         </tr>

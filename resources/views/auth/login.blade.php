@@ -6,7 +6,7 @@
             <div class="panel panel-default">
 
                 <div class="panel-body">
-                  <div class="panel-heading text-center form_head"><h2>Library Management System
+                  <div class="panel-heading text-center form_head"><h2>Issue Management System
                   </h2></div>
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}

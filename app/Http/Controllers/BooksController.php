@@ -31,7 +31,7 @@ class BooksController extends Controller
     $auths = authors::all();
     $cats = booksCategory::all();
 
-    return view('addBooks', ['auths' => $auths, 'cats'=> $cats ]);
+    return view('addBooks', ['0' => $auths, 'cats'=> $cats ]);
 
       //return "Create Function called";
   }
@@ -49,6 +49,7 @@ class BooksController extends Controller
     $book->bookTitle = $request->title;
     $book->edition = $request->edition;
     $book->authId = authors::where('name', $request->author)->first()->authId;
+    
     $book->catId = booksCategory::where('catName', '=', $request->cat)->first()->catId;
     $book->totalAvail = $request->booksAvail;
 
@@ -102,9 +103,10 @@ class BooksController extends Controller
             'edition' => $request->edition,
             'authId' =>  authors::where('name', $request->author)->first()->authId,
             'catId' => booksCategory::where('catName', '=', $request->cat)->first()->catId,
+            //
             'totalAvail' => $request->booksAvail
             ]);
-            return redirect('/booksList');
+            return redirect('/assignedIssues');
     
   }
 

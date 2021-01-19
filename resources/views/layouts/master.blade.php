@@ -14,57 +14,84 @@
 
     </head>
     <body>
-        <div class="wrapper">
+      
+      <div class="wrapper">
             <!-- Sidebar Holder -->
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3 class="text-center">Library Management System</h3>
+                    <h3 class="text-center">Issue Management System</h3>
                     <strong><b>DC</b>L</strong>
                 </div>
 
+                @if(Auth::user()->type == 'Technician')
+                <ul class="list-unstyled components">
+                  <li class="active">
+                      <a href="#bookSubmenu" data-toggle="collapse" aria-expanded="false">
+                          <i class="glyphicon glyphicon-list-alt"></i>
+                          Issues
+                      </a>
+                      <ul class="collapse list-unstyled" id="bookSubmenu">
+                          <li>
+                            <a href="addBooks">
+                              <i class="glyphicon glyphicon-plus"></i>
+                              Graph                              
+                            </a>
+                          </li>
+                          <li>
+                            <a href="assignedIssues">
+                              <i class="glyphicon glyphicon-plus"></i>
+                              Assgined Issues                               
+                            </a>
+                          </li>
+                @else
+                    
                 <ul class="list-unstyled components">
                     <li class="active">
                         <a href="#bookSubmenu" data-toggle="collapse" aria-expanded="false">
                             <i class="glyphicon glyphicon-list-alt"></i>
-                            Books
+                            Issue
                         </a>
                         <ul class="collapse list-unstyled" id="bookSubmenu">
                             <li>
                               <a href="addBooks">
                                 <i class="glyphicon glyphicon-plus"></i>
-                                Add New Book
-                              </a>
+                                Add an New Issue
+                                </a>
+                            </li>
+                            <li>
+                              <a href="addIssue">
+                                <i class="glyphicon glyphicon-plus"></i>
+                                Add an New Issue 2
+                                </a>
                             </li>
                             <li>
                               <a href="booksList">
                                 <i class="glyphicon glyphicon-list"></i>
-                                Books List
+                                Issue List
                               </a>
                             </li>
-                            <li>
-                              <a href="categoriesList">
-                                <i class="glyphicon glyphicon-tags"></i>
-                                Category Wise books
-                              </a>
-                            </li>
+                            
+                           
                         </ul>
                     </li>
                     <li>
+                      
+
                         <a href="#catSubmenu" data-toggle="collapse" aria-expanded="false">
                             <i class="glyphicon glyphicon-tags"></i>
-                            Categories
+                            Departments
                         </a>
                         <ul class="collapse list-unstyled" id="catSubmenu">
                             <li>
                               <a href="addCategories">
                                 <i class="glyphicon glyphicon-plus"></i>
-                                Add New Category
+                                Add a New Department
                               </a>
                             </li>
                             <li>
                               <a href="categoriesList">
                                 <i class="glyphicon glyphicon-list"></i>
-                                Categories List
+                                Department List
                               </a>
                             </li>
                         </ul>
@@ -72,23 +99,27 @@
                     <li>
                         <a href="#authorSubmenu" data-toggle="collapse" aria-expanded="false">
                             <i class="glyphicon glyphicon-pencil"></i>
-                            Authors
+                            Technicians
                         </a>
                         <ul class="collapse list-unstyled" id="authorSubmenu">
                             <li>
                               <a href="addAuthors">
                                 <i class="glyphicon glyphicon-plus"></i>
-                                Add New Author
+                                Add a New Technician
                               </a>
                             </li>
                             <li>
                               <a href="authorsList">
                                 <i class="glyphicon glyphicon-list"></i>
-                                Author List
+                                Technicians List
                               </a>
                             </li>
                         </ul>
                     </li>
+            
+                    
+                @endif
+        
                   
                     
                 </ul>

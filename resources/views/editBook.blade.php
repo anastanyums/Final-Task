@@ -9,7 +9,7 @@
 
                 <div class="panel-body">
                   <div class="panel-heading text-center form_head"><h2><b>Add</b> New Books</h2></div>
-                    <form class="form-horizontal" method="POST" action="/editBook/{{ $book ->bookId }}">
+                    <form class="form-horizontal" method="POST" action="/editBook/{{ $book ->bookId}}">
                       {{ csrf_field() }}
                       <input type="hidden" name="_method" value="put" />
 
@@ -50,7 +50,7 @@
                                 <option>--Select Author--</option>
                                 <option>opp1</option>
                                 @foreach($auths as $auth)
-                                  <option {{ $auth->authId ===  $book->authId ? 'selected' : '' }}> {{$auth->name}} </option>
+                                <option {{ $auth->authId ===  $book->authId ? 'selected' : '' }}> {{$auth->name}} </option>
                                 @endforeach
                               </select>
                           </div>

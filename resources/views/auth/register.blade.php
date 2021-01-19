@@ -24,6 +24,20 @@
 
                         </div>
 
+                        
+
+                    
+                        <div class="custom_field form-group{{ $errors->has('type') ? ' has-error' : '' }}">
+                            <select class="form-control" id="type" name="type">
+                                <option>--User Type--</option> 
+                                <option> Admin </option> 
+                                <option> Technician</option> 
+                                <option> Department Head </option>                                  
+                                
+                              </select>
+                            </div>
+
+
                         <div class=" custom_field form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                           <div class="inner-addon right-addon">
                             <i class="glyphicon glyphicon-envelope"></i>

@@ -18,8 +18,13 @@ Route::get('/booksList', 'BooksController@index');
 Route::get('/bookDelete/{id}', 'BooksController@destroy');
 Route::get('/editBook/{id}', 'BooksController@show');
 
+Route::get('/assignedIssues', 'assignedIssueController@index');
+
 Route::get('/addBooks', 'BooksController@create');
 Route::post('/addBooks', 'BooksController@store');
+
+
+Route::post('/addIssue', 'IssueController@store');
 
 Route::get('/categoriesList','BooksCategoryController@index');
 Route::get('/addCategories', 'BooksCategoryController@create');
@@ -51,4 +56,6 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
 
